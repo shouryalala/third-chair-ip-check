@@ -1,12 +1,27 @@
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Progress } from "@/components/ui/progress";
+import { Button } from "@/components/ui/button";
 import { Music, TrendingUp, Shield, CheckCircle2, AlertTriangle, Eye, Users, Heart } from "lucide-react";
 import { Separator } from "@/components/ui/separator";
 
 const AnalysisResults = () => {
   return (
     <div className="space-y-6">
+      {/* Video Player */}
+      <Card>
+        <CardHeader>
+          <CardTitle>Uploaded Video</CardTitle>
+        </CardHeader>
+        <CardContent>
+          <div className="aspect-video bg-muted rounded-lg flex items-center justify-center text-muted-foreground">
+            <div className="text-center space-y-2">
+              <div className="text-sm">Video Preview</div>
+              <div className="text-xs">Original uploaded content</div>
+            </div>
+          </div>
+        </CardContent>
+      </Card>
       {/* Overview Cards */}
       <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
         <Card>
@@ -24,13 +39,13 @@ const AnalysisResults = () => {
         
         <Card>
           <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
-            <CardTitle className="text-sm font-medium">Reach Potential</CardTitle>
-            <Users className="h-4 w-4 text-muted-foreground" />
+            <CardTitle className="text-sm font-medium">Compliance Score</CardTitle>
+            <Shield className="h-4 w-4 text-muted-foreground" />
           </CardHeader>
           <CardContent>
-            <div className="text-2xl font-bold text-success">High</div>
+            <div className="text-2xl font-bold text-destructive">Low</div>
             <p className="text-xs text-muted-foreground">
-              Estimated 2.4M+ views
+              Potential copyright issues
             </p>
           </CardContent>
         </Card>
@@ -86,13 +101,22 @@ const AnalysisResults = () => {
             
             <Separator />
             
-            <div className="space-y-2">
-              <h4 className="text-sm font-semibold">Key Features Detected</h4>
-              <div className="flex flex-wrap gap-2">
-                <Badge variant="secondary">Dance/Movement</Badge>
-                <Badge variant="secondary">Colorful Visuals</Badge>
-                <Badge variant="secondary">Fast Paced</Badge>
-                <Badge variant="secondary">Young Demographics</Badge>
+            <div className="space-y-3">
+              <div>
+                <h4 className="text-sm font-semibold mb-2">Video Description</h4>
+                <p className="text-sm text-muted-foreground">
+                  Cozy candlelit home with Orange themed cookies and beverage. Books and ambient lighting.
+                </p>
+              </div>
+              
+              <div className="space-y-2">
+                <h4 className="text-sm font-semibold">Key Features Detected</h4>
+                <div className="flex flex-wrap gap-2">
+                  <Badge variant="secondary">Home</Badge>
+                  <Badge variant="secondary">Candles</Badge>
+                  <Badge variant="secondary">Melancholic</Badge>
+                  <Badge variant="secondary">Slow</Badge>
+                </div>
               </div>
             </div>
           </CardContent>
@@ -120,21 +144,21 @@ const AnalysisResults = () => {
               </div>
               
               <div className="space-y-2 text-sm">
-                <p><strong>Artist:</strong> Daft Punk</p>
-                <p><strong>Title:</strong> Get Lucky (feat. Pharrell Williams)</p>
-                <p><strong>Album:</strong> Random Access Memories</p>
-                <p><strong>Label:</strong> Columbia Records</p>
+                <p><strong>Artist:</strong> Mitski</p>
+                <p><strong>Title:</strong> My Love Mine All Mine</p>
+                <p><strong>Album:</strong> The Land Is Inhospitable And So Are We</p>
+                <p><strong>Label:</strong> Dead Ocean Records</p>
               </div>
             </div>
             
             <div className="space-y-3">
               <div className="flex items-center space-x-2">
-                <AlertTriangle className="h-4 w-4 text-warning" />
-                <span className="text-sm font-medium text-warning">License Required</span>
+                <AlertTriangle className="h-4 w-4 text-destructive" />
+                <span className="text-sm font-medium text-destructive">Potential Unlicensed Use Detected</span>
               </div>
               
               <div className="text-sm text-muted-foreground">
-                This track requires proper licensing for commercial use. Contact the rights holder or use a licensed music service.
+                This track may require proper licensing for commercial use. Please review and take appropriate action.
               </div>
             </div>
             
@@ -150,6 +174,19 @@ const AnalysisResults = () => {
                 loading="lazy"
                 className="rounded-lg"
               ></iframe>
+            </div>
+            
+            {/* Action Buttons */}
+            <div className="mt-6 space-y-3">
+              <Button className="w-full bg-brand-teal hover:bg-brand-teal-dark" size="lg">
+                Replace with Royalty Free Music
+              </Button>
+              <Button variant="outline" className="w-full" size="lg">
+                Notify Team
+              </Button>
+              <Button variant="secondary" className="w-full" size="lg">
+                Open Music on Spotify
+              </Button>
             </div>
           </CardContent>
         </Card>

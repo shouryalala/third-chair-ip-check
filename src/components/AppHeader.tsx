@@ -8,9 +8,11 @@ const AppHeader = () => {
       <div className="flex items-center justify-between">
         {/* Logo and Brand */}
         <div className="flex items-center space-x-3">
-          <div className="text-2xl font-bold tracking-wide">
-            <span className="italic">Third</span> Chair
-          </div>
+          <img 
+            src="https://ik.imagekit.io/rekruiter/Watchdog/logo-white.png" 
+            alt="Third Chair" 
+            className="h-8 w-auto"
+          />
         </div>
 
         {/* Right side navigation */}
