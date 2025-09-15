@@ -23,15 +23,17 @@ const VideoPlayer = ({ file }: VideoPlayerProps) => {
     <Card className="p-4 animate-elegant-fade-in">
       <div className="space-y-3">
         <h3 className="font-semibold text-lg">Uploaded Video</h3>
-        <div className="rounded-lg overflow-hidden bg-black">
-          <video
-            ref={videoRef}
-            controls
-            className="w-full h-64 object-cover"
-            preload="metadata"
-          >
-            Your browser does not support the video tag.
-          </video>
+        <div className="rounded-lg overflow-hidden bg-black flex justify-center">
+          <div className="w-64 h-[32rem]">
+            <video
+              ref={videoRef}
+              controls
+              className="w-full h-full object-cover"
+              preload="metadata"
+            >
+              Your browser does not support the video tag.
+            </video>
+          </div>
         </div>
         <div className="text-sm text-muted-foreground">
           <span className="font-medium">{file.name}</span>

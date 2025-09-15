@@ -86,17 +86,17 @@ const Dashboard = () => {
                 </Button>
               </div>
               
+              {/* Analysis Results */}
+              <div className="animate-stagger-fade-in" style={{ animationDelay: '0.1s' }}>
+                <AnalysisResults />
+              </div>
+
               {/* Video Player */}
               {uploadedFile && (
-                <div className="animate-stagger-fade-in" style={{ animationDelay: '0.1s' }}>
+                <div className="animate-stagger-fade-in" style={{ animationDelay: '0.2s' }}>
                   <VideoPlayer file={uploadedFile} />
                 </div>
               )}
-              
-              {/* Analysis Results */}
-              <div className="animate-stagger-fade-in" style={{ animationDelay: '0.2s' }}>
-                <AnalysisResults />
-              </div>
             </div>
           )}
         </div>

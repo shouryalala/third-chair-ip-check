@@ -1,5 +1,5 @@
 import { useState, useCallback } from "react";
-import { Upload, Video, X } from "lucide-react";
+import { Upload } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 
@@ -46,19 +46,7 @@ const VideoUpload = ({ onVideoUploaded, uploadedFile }: VideoUploadProps) => {
 
   return (
     <Card className="p-8">
-      {uploadedFile ? (
-        <div className="text-center">
-          <div className="flex items-center justify-center space-x-3 mb-4">
-            <Video className="h-12 w-12 text-brand-teal" />
-            <div>
-              <h3 className="text-lg font-semibold">{uploadedFile.name}</h3>
-              <p className="text-sm text-muted-foreground">
-                {(uploadedFile.size / (1024 * 1024)).toFixed(1)} MB
-              </p>
-            </div>
-          </div>
-        </div>
-      ) : (
+      {!uploadedFile && (
         <div
           className={`border-2 border-dashed rounded-lg p-12 text-center transition-all duration-200 ${
             isDragOver

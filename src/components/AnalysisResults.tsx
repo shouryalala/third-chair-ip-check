@@ -8,20 +8,6 @@ import { Separator } from "@/components/ui/separator";
 const AnalysisResults = () => {
   return (
     <div className="space-y-6">
-      {/* Video Player */}
-      <Card>
-        <CardHeader>
-          <CardTitle>Uploaded Video</CardTitle>
-        </CardHeader>
-        <CardContent>
-          <div className="aspect-video bg-muted rounded-lg flex items-center justify-center text-muted-foreground">
-            <div className="text-center space-y-2">
-              <div className="text-sm">Video Preview</div>
-              <div className="text-xs">Original uploaded content</div>
-            </div>
-          </div>
-        </CardContent>
-      </Card>
       {/* Overview Cards */}
       <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
         <Card>
