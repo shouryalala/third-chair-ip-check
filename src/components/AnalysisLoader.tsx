@@ -12,22 +12,22 @@ const loadingSteps = [
   {
     icon: Eye,
     text: "Analyzing video content and visual elements...",
-    duration: 1200,
+    duration: 1600,
   },
   {
     icon: Music,
     text: "Detecting audio tracks and music identification...",
-    duration: 1000,
+    duration: 1800,
   },
   {
     icon: Brain,
     text: "Processing genre classification and reach analysis...",
-    duration: 1300,
+    duration: 2000,
   },
   {
     icon: Shield,
     text: "Checking compliance and copyright requirements...",
-    duration: 1500,
+    duration: 2600,
   },
 ];
 
@@ -77,21 +77,21 @@ const AnalysisLoader = ({ isAnalyzing, onComplete }: AnalysisLoaderProps) => {
   const CurrentIcon = loadingSteps[currentStep]?.icon || Loader2;
 
   return (
-    <Card className="p-8">
+    <Card className="p-8 animate-elegant-scale-in">
       <div className="flex flex-col items-center space-y-6">
-        <div className="flex items-center space-x-3">
+        <div className="flex items-center space-x-3 animate-elegant-fade-in">
           <CurrentIcon className="h-8 w-8 text-brand-teal animate-pulse" />
           <h2 className="text-xl font-semibold">Analyzing Video</h2>
         </div>
         
-        <div className="w-full max-w-md">
+        <div className="w-full max-w-md animate-stagger-fade-in" style={{ animationDelay: '0.2s' }}>
           <Progress value={progress} className="h-2" />
           <p className="text-sm text-muted-foreground mt-2 text-center">
             {Math.round(progress)}% complete
           </p>
         </div>
         
-        <p className="text-center text-muted-foreground max-w-lg">
+        <p className="text-center text-muted-foreground max-w-lg animate-stagger-fade-in" style={{ animationDelay: '0.4s' }}>
           {loadingSteps[currentStep]?.text || "Processing..."}
         </p>
       </div>

@@ -1,6 +1,7 @@
 import { useState } from "react";
 import AppHeader from "@/components/AppHeader";
 import VideoUpload from "@/components/VideoUpload";
+import VideoPlayer from "@/components/VideoPlayer";
 import AnalysisLoader from "@/components/AnalysisLoader";
 import AnalysisResults from "@/components/AnalysisResults";
 import { Button } from "@/components/ui/button";
@@ -39,7 +40,7 @@ const Dashboard = () => {
         <div className="space-y-8">
           {/* Header Section */}
           <div className="text-center space-y-4">
-            <h1 className="text-3xl font-bold tracking-tight">Video Content Analyzer</h1>
+            <h1 className="text-3xl font-bold tracking-tight">Compliance Analysis</h1>
             <p className="text-muted-foreground max-w-2xl mx-auto">
               Upload your video content to analyze genre classification, reach potential, 
               and music compliance requirements with advanced AI-powered insights.
@@ -72,7 +73,7 @@ const Dashboard = () => {
 
           {/* Results */}
           {showResults && (
-            <div className="space-y-6">
+            <div className="space-y-6 animate-elegant-slide-up">
               <div className="flex items-center justify-between">
                 <h2 className="text-2xl font-bold">Analysis Complete</h2>
                 <Button
@@ -84,7 +85,18 @@ const Dashboard = () => {
                   <span>Analyze New Video</span>
                 </Button>
               </div>
-              <AnalysisResults />
+              
+              {/* Video Player */}
+              {uploadedFile && (
+                <div className="animate-stagger-fade-in" style={{ animationDelay: '0.1s' }}>
+                  <VideoPlayer file={uploadedFile} />
+                </div>
+              )}
+              
+              {/* Analysis Results */}
+              <div className="animate-stagger-fade-in" style={{ animationDelay: '0.2s' }}>
+                <AnalysisResults />
+              </div>
             </div>
           )}
         </div>

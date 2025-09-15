@@ -23,12 +23,12 @@ const AppHeader = () => {
           
           <div className="flex items-center space-x-2">
             <Avatar className="h-8 w-8">
-              <AvatarImage src="" alt="The Orchard" />
+              <AvatarImage src="" alt="SC Johnson" />
               <AvatarFallback className="bg-white/20 text-white text-sm">
-                TO
+                SCJ
               </AvatarFallback>
             </Avatar>
-            <span className="text-sm font-medium">The Orchard</span>
+            <span className="text-sm font-medium">SC Johnson</span>
           </div>
         </div>
       </div>
